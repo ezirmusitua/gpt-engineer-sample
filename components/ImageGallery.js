@@ -3,7 +3,7 @@ const ImageGallery = ({ images }) => {
     <div className="image-gallery">
       {images.map((image, index) => (
         <div key={index} className="image-item">
-          <img src={URL.createObjectURL(image)} alt={image.name} />
+          <img src={image.path} alt="Uploaded image" />
         </div>
       ))}
       <style jsx>{`
