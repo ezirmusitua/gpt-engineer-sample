@@ -1,4 +1,7 @@
+"use client"
+
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import ImageGallery from '../components/ImageGallery';
 
 const Square = () => {
@@ -34,6 +37,8 @@ const Square = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   };
 
+  const userToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+
   if (isLoading) return (
     <div className="flex justify-center items-center">
       <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
@@ -68,10 +73,17 @@ const Square = () => {
           >
             Next
           </button>
+          {userToken && (
+            <Link href="/user-home">
+              <span className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-md hover:shadow-lg transition-all">
+                User Home
+              </span>
+            </Link>
+          ) || null}
         </div>
       </div>
     </>
-  );
+  ); 
 };
 
 export default Square;
