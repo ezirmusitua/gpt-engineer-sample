@@ -6,10 +6,24 @@ const Login = () => {
   const router = useRouter();
   const [loginError, setLoginError] = useState(false);
 
-  const handleLogin = (username, password) => {
-    if (username === 'admin' && password === 'admin') {
-      router.push('/user-home');
-    } else {
+  const handleLogin = async (username, password) => {
+    try {
+      const response = await fetch('/api/authenticate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await response.json();
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        router.push('/user-home');
+      } else {
+        setLoginError(true);
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
       setLoginError(true);
     }
   };
