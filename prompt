@@ -1,0 +1,5 @@
+优化 pages/api/upload.js 的实现：
+
+1. 将 form.parse 转化为 Promise
+2. 使用 renameSync
+3. 返回 res.json

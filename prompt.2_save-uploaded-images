@@ -1,0 +1,16 @@
+在“用户主页”中，当用户上传一张图片后：
+
+1. 将图片保存到 asset 文件夹
+2. 将图片的路径保存到 data.json 文件夹中，data.json 的样例如下：
+
+```json
+{
+  "images": [
+    {
+      "path": "assets/cat1.webp",
+      "uploader": "admin",
+      "uploaded_at": 1707879064417
+    }
+  ]
+}
+```

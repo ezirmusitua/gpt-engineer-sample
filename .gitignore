@@ -1,0 +1,7 @@
+node_modules
+.yarn
+.next
+.gpteng
+public/assets
+.pnp.cjs
+.pnp.loader.mjs

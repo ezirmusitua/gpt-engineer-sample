@@ -1,0 +1,3 @@
+npx create-next-app@14 my-next-app
+cd my-next-app
+npm install
