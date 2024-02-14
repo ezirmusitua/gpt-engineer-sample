@@ -1,0 +1,12 @@
+修改 login 页面，通过一个 API 验证用户输入的用户名和密码在 `user.json` 中存在且密码匹配。用户登录成功后，生成 jwt Token，并保存到 localStorage 中。user.json 的样例如下：
+
+```json filename="user.json"
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin"
+    }
+  ]
+}
+```
