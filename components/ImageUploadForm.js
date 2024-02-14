@@ -8,8 +8,12 @@ const ImageUploadForm = ({ onImageUpload }) => {
     if (image) {
       const formData = new FormData();
       formData.append('file', image);
+      const token = localStorage.getItem('token');
       const response = await fetch('/api/upload', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
         body: formData,
       });
       if (response.ok) {

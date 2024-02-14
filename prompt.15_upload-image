@@ -1,0 +1,1 @@
+修复 user-home 中上传图片的请求，在发送时携带 Authorization 头。
