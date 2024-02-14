@@ -6,7 +6,16 @@ export const config = {
   api: { bodyParser: false },
 };
 
+import { verifyToken } from '../../utils/auth';
+
 export default async function uploadHandler(req, res) {
+  // Verify the token from the Authorization header
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (!token || !verifyToken(token)) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
   const form = new formidable.IncomingForm();
   form.uploadDir = "./public/assets";
   form.keepExtensions = true;

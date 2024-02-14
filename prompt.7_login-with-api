@@ -2,7 +2,7 @@
 
 ```json filename="user.json"
 {
-  "users": [
+ "users": [
     {
       "username": "admin",
       "password": "admin"

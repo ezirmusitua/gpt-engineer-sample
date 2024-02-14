@@ -1,0 +1,1 @@
+用户进入 user-home 页面时，需要检查 localStorage 中是否保存了 token，并且在该页面请求后端 API 时，需要使用携带 Authorization 头。后端接口需要验证 Authorization。

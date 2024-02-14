@@ -5,10 +5,21 @@ import ImageGallery from '../components/ImageGallery';
 
 const UserHome = () => {
   useEffect(() => {
+    // Redirect to login if no token is found in localStorage
+    if (!localStorage.getItem('token')) {
+      router.push('/login');
+      return;
+    }
+
     const fetchUserImages = async () => {
+      const token = localStorage.getItem('token');
       try {
         const userId = 'admin'; // Replace with actual logic to get the current user's ID
-        const response = await fetch(`/api/user-images?userId=${userId}`);
+        const response = await fetch(`/api/user-images?userId=${userId}`, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
         if (!response.ok) {
           throw new Error('Failed to fetch user images');
         }
