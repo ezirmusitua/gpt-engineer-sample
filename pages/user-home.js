@@ -49,11 +49,13 @@ const UserHome = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto p-6">
       <ImageUploadForm onImageUpload={handleImageUpload} />
       <ImageGallery images={userImages} />
-      <button onClick={() => router.push('/square')}>Go to Square</button>
-      <button onClick={handleLogout}>Logout</button>
+      <div className="flex justify-between mt-4">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform motion-safe:hover:scale-105 transition ease-in-out duration-300" onClick={() => router.push('/square')}>Go to Square</button>
+        <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform motion-safe:hover:scale-105 transition ease-in-out duration-300" onClick={handleLogout}>Logout</button>
+      </div>
     </div>
   );
 };
