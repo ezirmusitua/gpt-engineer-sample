@@ -40,12 +40,10 @@ const Square = () => {
   const userToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
   if (isLoading) return (
-    <div className="flex justify-center items-center">
-      <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </div>
+    <div className="flex justify-center items-center h-screen">
+      <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12 mb-4"></div>
     </div>
-  );
+  )
   if (error) return (
     <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
       <strong className="font-bold">Error:</strong>

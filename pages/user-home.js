@@ -49,7 +49,7 @@ const UserHome = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 space-y-6">
       <ImageUploadForm onImageUpload={handleImageUpload} />
       <ImageGallery images={userImages} />
       <div className="flex justify-between mt-4">

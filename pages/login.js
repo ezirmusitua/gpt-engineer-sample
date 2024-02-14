@@ -29,8 +29,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="w-full max-w-xs">
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="w-full max-w-xs m-4 p-6 bg-white rounded-lg shadow-xl">
+
         <LoginForm onLogin={handleLogin} />
         {loginError && <p className="text-red-500 text-xs italic">Login failed. Please try again.</p>}
       </div>

@@ -21,12 +21,13 @@ const ImageUploadForm = ({ onImageUpload }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
       <input
         type="file"
         onChange={(e) => setImage(e.target.files[0])}
+        className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
       />
-      <button type="submit">Upload</button>
+      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload</button>
     </form>
   );
 };
